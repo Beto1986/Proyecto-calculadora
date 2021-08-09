@@ -16,23 +16,6 @@ h1 {
     color: rgba(11, 185, 253, 0.932);
 }
 
-body {
-    background-image: url("imagenfondo/nice.jpg");
-}
-
-h1 {
-    font-size: 70px;
-    font-weight: bolder;
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-    padding: 3px;
-}
-
-.texto-borde {
-    -webkit-text-stroke: 3px black;
-    color: rgba(11, 185, 253, 0.932);
-}
-
 .calculadora {
     height: 500px;
     border: 2px groove #0a0101;
@@ -45,17 +28,12 @@ h1 {
 
 .calculadora td {
     margin: 2px;
+    font-size: 50px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bolder;
     text-align: center;
     padding: 10px;
     background-color: #b7bbbbea;
-    font-size: 30px;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bolder;
-    text-align: center;
-    padding: 3px;
-    background-color: #242323ea;
 }
 
 button {
@@ -72,14 +50,6 @@ button:hover {
     background-color: #0695af;
     color: rgb(20, 20, 20);
     box-shadow: 2px 2px 10px #a77176;
-    box-shadow: 2px 2px black;
-    cursor: pointer;
-    background-color: #acb7b9;
-}
-
-button:hover {
-    background-color: #0a757c;
-    color: rgb(20, 20, 20);
 }
 
 #resultado {
