@@ -178,7 +178,7 @@ const resolver = () => {
 
 // Mostrar valores en memoria.
 const presionarBotonMemoria = () => {
-    alert(totales);
+    alert(totales.join(""));
 }
 
 memo.addEventListener("click", presionarBotonMemoria);
