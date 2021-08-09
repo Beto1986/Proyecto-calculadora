@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="calculadora.css">
+    <title>Mi calculadora</title>
+</head>
+
+<body onload="inicializar()">
+
+    <h1 class="texto-borde">Calculadora Javascript </h1>
+
+    <table class="calculadora">
+        <tr>
+            <td colspan="4"><span id="resultado"></span></td>
+        </tr>
+        <tr>
+            <td><button class="reproductor" id="porcentaje">%</button></td>
+            <td><button class="reproductor" id="potencia">x²</button></td>
+            <td><button class="reproductor" id="raiz">&radic;</button></td>
+            <td><button class="reproductor" id="division">/</button></td>
+        </tr>
+        <tr>
+            <td><button class="reproductor" id="siete">7</button></td>
+            <td><button class="reproductor" id="ocho">8</button></td>
+            <td><button class="reproductor" id="nueve">9</button></td>
+            <td><button class="reproductor" id="multiplicacion">x</button></td>
+        </tr>
+        <tr>
+            <td><button class="reproductor" id="cuatro">4</button></td>
+            <td><button class="reproductor" id="cinco">5</button></td>
+            <td><button class="reproductor" id="seis">6</button></td>
+            <td><button class="reproductor" id="resta">-</button></td>
+        </tr>
+        <tr>
+            <td><button class="reproductor" id="uno">1</button></td>
+            <td><button class="reproductor" id="dos">2</button></td>
+            <td><button class="reproductor" id="tres">3</button></td>
+            <td><button class="reproductor" id="suma">+</button></td>
+        </tr>
+        <tr>
+            <td><button class="reproductor" id="borrar">C</button></td>
+            <td><button class="reproductor" id="cero">0</button></td>
+            <td><button class="reproductor" id="coma">.</button></td>
+            <td><button class="reproductor" id="memo">M</button></td>
+        </tr>
+        <tr>
+            <td colspan="4"><button class="reproductor" id="igual">=</button></td>
+        </tr>
+    </table>
+    <!-- <input id="test" type="text" onkeydown="uniKeyCode(event)"> -->
+
+    <script src="calculadora.js"></script>
