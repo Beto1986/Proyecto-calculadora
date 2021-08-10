@@ -30,6 +30,8 @@ function inicializar() {
     const coma = document.querySelector("#coma");
     const igual = document.querySelector("#igual");
     const memo = document.querySelector("#memo");
+    const borrarPos = document.querySelector("#borrarposicion");
+    const masMenos = document.querySelector("#masmenos");
 
 }
 
@@ -45,7 +47,14 @@ const presionarBoton8 = () => resultado.innerText = resultado.innerText + "8";
 const presionarBoton9 = () => resultado.innerText = resultado.innerText + "9";
 const presionarBoton0 = () => resultado.innerText = resultado.innerText + "0";
 const presionarBotonComa = () => resultado.innerText = resultado.innerText + ".";
-
+const presionarBotonBorrarPos = () => resultado.innerText = resultado.innerText.slice(0, -1);
+const presionarBotonMasMenos = () => {
+    if (resultado.innerText === '') {
+        limpiar()
+    } else {
+        resultado.innerText = resultado.innerText * -1;
+    }
+}
 
 // Invocamos cada id con su función que concatena el valor + el botón cliqueado.
 uno.addEventListener("click", presionarBoton1);
@@ -59,6 +68,8 @@ ocho.addEventListener("click", presionarBoton8);
 nueve.addEventListener("click", presionarBoton9);
 cero.addEventListener("click", presionarBoton0);
 coma.addEventListener("click", presionarBotonComa);
+borrarposicion.addEventListener("click", presionarBotonBorrarPos);
+masmenos.addEventListener("click", presionarBotonMasMenos);
 
 const presionarBotonSuma = () => {
     primerValor = resultado.innerText;
@@ -192,4 +203,68 @@ boton.forEach(repro => {
         etiquetaAudio.setAttribute("src", "sonido/click2.mp3")
         etiquetaAudio.play()
     })
+})
+
+
+// Se captura cada tecla presionada
+addEventListener('keydown', (event) => {
+
+    // Capturo la tecla que se presionó.
+    let tecla = event.key;
+
+    // Si las teclas están comprendidas entre 0 y 9 , acumulo los valores + la tecla presionada.
+    if (tecla >= 0 && tecla <= 9) {
+        resultado.innerText += tecla;
+    }
+
+    // Si las teclas no son dígitos (0 a 9)
+    switch (tecla) {
+        case '+':
+            presionarBotonSuma();
+            break;
+        case '-':
+            presionarBotonResta();
+            break;
+        case '*':
+            presionarBotonMultiplicacion();
+            break;
+        case '/':
+            presionarBotonDivision();
+            break;
+        case '=':
+            presionarBotonIgual();
+            break;
+        case 'Enter':
+            presionarBotonIgual();
+            break;
+        case '^': // Potencia
+            presionarBotonPotencia();
+            break;
+        case '√': // Raiz cuadrada
+            presionarBotonRaiz();
+            break;
+        case '%':
+            presionarBotonPorcentaje();
+            break;
+        case 'Backspace':
+            presionarBotonBorrarPos();
+            break;
+        case 'Delete': // Es el boton de Suprimir(remplaza a la C de la calculadora)
+            presionarBotonReset();
+            break;
+        case '.':
+            presionarBotonComa();
+            break;
+        case ',':
+            presionarBotonComa();
+            break;
+        case 'M': // La M de memoria
+            presionarBotonMemoria();
+            break;
+        case 'O': // La O de "Opuesto"
+            presionarBotonMasMenos();
+            break;
+        default:
+            break;
+    }
 })
